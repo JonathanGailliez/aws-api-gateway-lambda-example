@@ -1,0 +1,14 @@
+version: 0.1
+phases:
+    install:
+        commands:
+            # Install required module for python
+            - pip install simplejson -t .
+            - aws cloudformation package --template-file example.yml --s3-bucket YOUR_BUCKET_NAME --output-template-file new_example.yml
+            - sed '/BodyS3Location/,+2 d' ./new_example.yml
+            - sed -i.bak '/BodyS3Location/,+2 d' ./new_example.yml
+artifacts:
+    type: zip
+    files:
+        - new_example.yml
+
