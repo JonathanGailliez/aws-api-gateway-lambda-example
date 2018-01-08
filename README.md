@@ -132,7 +132,7 @@ You can see the API deployment and API stage created.
 
 ![API deployments](screenshots/19.png)
 
-## The issue with subsequent deployments
+## The issue with subsequent deployments (This issue doesn't exist anymore! Thanks AWS!)
 
 You can find the invoke URL in the APIStage in the AWS console.
 
